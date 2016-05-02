@@ -2,7 +2,7 @@
 map中元素值为Key，元素索引下表为Value。
 所以在找到重复的情况下，可以判断下标差
 是否小于等于K。如果大于K，则修改已在map
-中元素对应的value，即下标
+中元素对应的value，即下标。
 */
 class Solution {
 public:
