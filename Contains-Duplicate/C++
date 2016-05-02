@@ -1,0 +1,19 @@
+/*
+给定一个整形数组，从中找出是否存在重复元素。
+用map来实现，遍历数组，每访问一个元素，看其
+是否在map中出现，如已出现过，则存在重复元素，
+如没有，则将元素加入到map中。
+*/
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        map<int, int> int_map;
+        for (int i = 0; i<nums.size(); i++) {
+            if(int_map.count(nums[i])){
+                return true;
+            }
+            int_map.insert(pair<int, int>(nums[i], i));     
+        }
+        return false;
+    }
+};
