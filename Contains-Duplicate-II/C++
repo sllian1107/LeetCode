@@ -1,0 +1,24 @@
+/*
+map中元素值为Key，元素索引下表为Value。
+所以在找到重复的情况下，可以判断下标差
+是否小于等于K。如果大于K，则修改已在map
+中元素对应的value，即下标
+*/
+class Solution {
+public:
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        map<int, int>int_map;
+         map<int,int>::iterator iter;
+        for (int i = 0; i<nums.size(); i++) {
+            if((iter=int_map.find(nums[i]) )!= int_map.end() ){
+                if (i - iter->second <= k) {
+                    return true;
+                }else{
+                    int_map.erase(iter);
+                }
+            }
+            int_map.insert(pair<int, int>(nums[i], i));
+        }
+        return false;
+    }
+};
