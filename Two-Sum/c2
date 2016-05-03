@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> mapping;
+        vector<int> result;
+        for (int i = 0; i < nums.size(); i++) {
+            const int gap = target - nums[i];
+            if (mapping.find(gap) != mapping.end() ) {//利用find找到gap对应的index
+                result.push_back(mapping[gap]);
+                result.push_back(i);
+                break;
+            }
+            mapping[nums[i]] = i;//hash table 里每个数都有自己对应的key 且唯一
+        }
+    return result;//输出两个index
+    }
+};
