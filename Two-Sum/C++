@@ -11,7 +11,7 @@ public:
             if (mapping.find(gap) != mapping.end() && mapping[gap] > i) {//利用find找到gap对应的index
                 result.push_back(i);
                 result.push_back(mapping[gap]);
-            break;
+//            break;
             }
         }
     return result;//输出两个index
