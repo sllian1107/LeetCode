@@ -11,16 +11,16 @@ class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
         int n = nums.size();
-        int pos = 0;
+        int index = 0;
         // 将非0数字依次原顺序排列
         for(int i = 0; i < n; i++){
             if (nums[i] != 0){
-                nums[pos] = nums[i];
-                pos++;
+                nums[index] = nums[i];
+                index++;
             }
         }
          // 将剩余的都置0
-        while (pos < n)
-            nums[pos++] = 0;
+        while (index < n)
+            nums[index++] = 0;
     }
 };
