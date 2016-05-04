@@ -7,12 +7,15 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        map<int, int> int_map;
+        map<int, int> map;
         for (int i = 0; i<nums.size(); i++) {
-            if(int_map.count(nums[i])){
+            //是否存在与nums[i]相等的数
+            if(map.count(nums[i])){
                 return true;
             }
-            int_map.insert(pair<int, int>(nums[i], i));     
+            //插入nums[i]
+            map.insert(pair<int, int>(nums[i], i)); 
+            
         }
         return false;
     }
